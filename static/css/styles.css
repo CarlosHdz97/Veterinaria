@@ -1,0 +1,16 @@
+.formulario{
+    text-align: center;
+    margin: 40px 0;
+    align-self: center;
+    border: 1px solid rgba(0,0,0,0.5);
+    border-radius: 15px;
+}
+.titulo{
+  text-align: center;
+  font-family: condensed light;
+  font-size: 3em;
+}
+
+.linea{
+  height: 5px;
+}
