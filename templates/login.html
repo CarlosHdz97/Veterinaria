@@ -1,0 +1,31 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<div class="row formulario cyan teal lighten-5 z-depth-5">
+  <form method="post">
+    {% csrf_token %}
+    <div class="row">
+      <p class="titulo">Iniciar Sesión</p>
+    </div>
+    <div class="row col s12 m10 l8 offset-m1 offset-l2">
+      <div class="input-field">
+        <i class="material-icons prefix">perm_identity</i>
+        <input id="icon_prefix" type="text" name="username">
+        <label for="icon_prefix">Usuario</label>
+      </div>
+    </div>
+    <div class="row col s12 m10 l8 offset-m1 offset-l2">
+      <div class="input-field">
+        <i class="material-icons prefix">lock_outline</i>
+        <input id="icon_prefix" type="password" name="password">
+        <label for="icon_prefix">Contraseña</label>
+      </div>
+    </div>
+    <div class="row col s12 m10 l6 offset-m1 offset-l3">
+      <button  class="btn waves-effect waves-light" type="submit">Ingresar
+        <i class="material-icons right" name="action">send</i>
+      </button>
+    </div>
+  </form>
+</div>
+{% endblock %}
