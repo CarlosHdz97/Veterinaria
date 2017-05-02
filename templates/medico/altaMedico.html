@@ -1,0 +1,48 @@
+{% extends 'base/base1.html' %}
+{% block content %}
+<div class="col s12 m6 l4 offset-l4">
+<form method="post">
+  {% csrf_token %}
+  <div class="row col s12 m10 l8 offset-m1 offset-l2">
+    <div class="input-field">
+      {{form.rfc}}
+      <label for="{{form.rfc.name}}">{{form.rfc.label}}</label>
+    </div>
+  </div>
+
+  <div class="row col s12 m10 l8 offset-m1 offset-l2">
+    <div class="input-field">
+      {{form.nombre}}
+      <label for="{{form.nombre.name}}">{{form.nombre.label}}</label>
+    </div>
+  </div>
+
+  <div class="row col s12 m10 l8 offset-m1 offset-l2">
+    <div class="input-field">
+      {{form.domicilio}}
+      <label for="{{form.domicilio.name}}">{{form.domicilio.label}}</label>
+    </div>
+  </div>
+
+  <div class="row col s12 m10 l8 offset-m1 offset-l2">
+    <div class="input-field">
+      {{form.telefono}}
+      <label for="{{form.telefono.name}}">{{form.telefono.label}}</label>
+    </div>
+  </div>
+
+  <div class="row col s12 m10 l8 offset-m1 offset-l2">
+    <div class="input-field">
+      {{form.email}}
+      <label for="{{form.email.name}}">{{form.email.label}}</label>
+    </div>
+  </div>
+  <div class="row col s12 m12 l10 offset-m1 offset-l2">
+    <button  class="btn waves-effect waves-light" type="submit">Guardar
+      <i class="material-icons right" name="action">send</i>
+    </button>
+    <a class="btn btn-danger" href="{% url 'doctor:principal' %}"> Cancelar</a>
+  </div>
+</form>
+</div>
+{% endblock %}

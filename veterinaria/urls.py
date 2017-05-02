@@ -23,6 +23,6 @@ urlpatterns = [
     url(r'^customer/', include('apps.cliente.urls', namespace = "customer")),
     #url(r'^appointment/', include('apps.consulta.urls', namespace = "appointment")),
     #url(r'^pet/', include('apps.mascota.urls', namespace = "pet")),
-    #url(r'^doctor/', include('apps.medico.urls', namespace = "doctor")),
+    url(r'^doctor/', include('apps.medico.urls', namespace = "doctor")),
     #url(r'^service/', include('apps.servicio.urls', namespace = "service")),
 ]

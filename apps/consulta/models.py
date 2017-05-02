@@ -20,7 +20,7 @@ class Factura(models.Model):
         return '{}'.format(self.id)
 class Historial(models.Model):
     consulta = models.ForeignKey(Consulta, null = True, blank = True, on_delete = models.CASCADE,)
-    fechaSeguimiento = models.DateField()
+    fechaSeguimiento = models.DateField(null = True)
     hora = models.CharField(max_length=20)
     mascota = models.ForeignKey(Mascota, null = True, blank = True, on_delete = models.CASCADE,)
     def __str__(self):
