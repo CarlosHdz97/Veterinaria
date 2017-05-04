@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'apps.mascota',
     'apps.medico',
     'apps.servicio',
+    'apps.home',
 ]
 
 MIDDLEWARE = [
@@ -130,5 +131,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
-LOGIN_REDIRECT_URL = reverse_lazy('customer:principal')
+LOGIN_REDIRECT_URL = reverse_lazy('doctor:principal')
 LOGOUT_REDIRECT_URL = reverse_lazy('login')

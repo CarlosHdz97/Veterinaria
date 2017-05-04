@@ -20,9 +20,10 @@ from django.contrib.auth.views import login, logout_then_login
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/login/', login, {'template_name':'login.html'}, name='login'),
+    url(r'^home/', include('apps.home.urls', namespace = "home")),
     url(r'^customer/', include('apps.cliente.urls', namespace = "customer")),
     #url(r'^appointment/', include('apps.consulta.urls', namespace = "appointment")),
-    #url(r'^pet/', include('apps.mascota.urls', namespace = "pet")),
+    url(r'^pet/', include('apps.mascota.urls', namespace="pet")),
     url(r'^doctor/', include('apps.medico.urls', namespace = "doctor")),
     url(r'^service/', include('apps.servicio.urls', namespace = "service")),
 ]
