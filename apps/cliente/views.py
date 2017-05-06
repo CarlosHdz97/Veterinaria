@@ -10,7 +10,7 @@ class ClienteCreate(CreateView):
     model = Cliente
     form_class = ClienteForm
     template_name = 'cliente/altaCliente.html'
-    success_url = reverse_lazy('customer:principal')
+    success_url = reverse_lazy('pet:create_pet')
 class ClienteList(ListView):
     model = Cliente
     template_name = 'cliente/reporteCliente.html'

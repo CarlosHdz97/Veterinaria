@@ -3,4 +3,4 @@ from django.http import HttpResponse
 
 # Create your views here.
 def home(request):
-	return HttpResponse("soy la pagina principal del sistema")
+    return render( request, 'home/menu.html')
