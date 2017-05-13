@@ -3,7 +3,7 @@ from apps.mascota.models import Mascota
 from apps.medico.models import Medico
 from apps.servicio.models import Servicio
 # Create your models here.
-class Consulta(models.Model):
+class Consulta(models.Model) :
     fecha = models.DateField()
     hora = models.CharField(max_length=20)
     mascota = models.ForeignKey(Mascota, null = True, blank = True, on_delete = models.CASCADE,)
