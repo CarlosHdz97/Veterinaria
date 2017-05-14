@@ -11,10 +11,10 @@ class MedicoCreate(CreateView):
     form_class = MedicoForm
     template_name = 'medico/altaMedico.html'
     success_url = reverse_lazy('doctor:principal')
+
 class MedicoList(ListView):
     model = Medico
     template_name = 'medico/reporteMedico.html'
-
 
 class MedicoUpdate(UpdateView):
     model = Medico

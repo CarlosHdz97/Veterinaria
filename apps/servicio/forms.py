@@ -18,7 +18,7 @@ class ServicioForm(forms.ModelForm):
         }
         widgets = {
         'descripcion': forms.TextInput(),
-        'precio': forms.TextInput(),
+        'precio': forms.NumberInput(),
         'tipo': forms.TextInput(),
         'periodicidad': forms.TextInput(),
         }

@@ -1,11 +1,61 @@
 {% extends 'base/base1.html' %}
-{% block title %} Mascota Alta {% endblock %}
 {% block content %}
-<div class="col s12 m6 l4 offset-l4 formulario cyan teal lighten-5 z-depth-5">
+<div class="col s12 m6 l4 offset-l4">
 <form method="post">
   {% csrf_token %}
   <div class="row col s12 m10 l8 offset-m1 offset-l2">
-    {{ form.as_p }}
+    <div class="input-field">
+      {{form.nombre}}
+      <label for="{{form.nombre.name}}">{{form.nombre.label}}</label>
+    </div>
+  </div>
+
+  <div class="row col s12 m10 l8 offset-m1 offset-l2">
+    <div class="input-field">
+      {{form.especie}}
+      <label for="{{form.especie.name}}">{{form.especie.label}}</label>
+    </div>
+  </div>
+
+  <div class="row col s12 m10 l8 offset-m1 offset-l2">
+    <div class="input-field">
+      {{form.raza}}
+      <label for="{{form.raza.name}}">{{form.raza.label}}</label>
+    </div>
+  </div>
+
+  <div class="row col s12 m10 l8 offset-m1 offset-l2">
+    <div class="input-field">
+      {{form.color}}
+      <label for="{{form.color.name}}">{{form.color.label}}</label>
+    </div>
+  </div>
+  <div class="row col s12 m10 l8 offset-m1 offset-l2">
+    <div class="input-field">
+      {{form.tamano}}
+      <label for="{{form.tamano.name}}">{{form.tamano.label}}</label>
+    </div>
+  </div>
+
+  <div class="row col s12 m10 l8 offset-m1 offset-l2">
+    <div class="input-field">
+      {{form.senaParticular}}
+      <label for="{{form.senaParticular.name}}">{{form.senaParticular.label}}</label>
+    </div>
+  </div>
+  <div class="row col s12 m10 l8 offset-m1 offset-l2">
+    <div class="input-field">
+      {{form.fechaNacimiento}}
+      <label for="{{form.fechaNacimiento.name}}">{{form.fechaNacimiento.label}}</label>}
+      <p>{{ form.fechaNacimiento.errors }}</p>
+    </div>
+  </div>
+  <div class="row col s12 m10 l8 offset-m1 offset-l2">
+    <div class="input-field">
+      {{form.cliente}}
+      <label for="{{form.cliente.name}}">{{form.cliente.label}}</label>
+      <p>{{ form.cliente.errors }}</p>
+    </div>
   </div>
   <div class="row col s12 m12 l10 offset-m1 offset-l2">
     <button  class="btn waves-effect waves-light" type="submit">Guardar

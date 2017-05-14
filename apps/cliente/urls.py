@@ -1,7 +1,7 @@
 from django.conf.urls import url, include
 from django.contrib.auth.decorators import login_required
 
-from apps.cliente.views import ClienteCreate, ClienteList, ClienteUpdate,ClienteDelete
+from apps.cliente.views import ClienteCreate, ClienteList, ClienteDelete, ClienteUpdate
 urlpatterns = [
     url(r'^create/$',login_required(ClienteCreate.as_view()), name='create_customer'),
     url(r'^read/$',login_required(ClienteList.as_view()), name='principal'),
