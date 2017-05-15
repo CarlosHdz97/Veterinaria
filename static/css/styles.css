@@ -1,17 +1,28 @@
 .formulario {
-  margin        : 40px 0;
+  margin: 10vh 0;
   border        : 1px solid rgba(0, 0, 0, 1);
   border-radius : 15px;
   text-align    : center;
   align-self    : center;
 }
+.us{
+  text-align  : center;
+  font-family : regular;
+  font-size   : 1em;
+  color: rgba(106, 105, 105, 0.5);
+}
 
+.cuerpo{
+  height: 85vh;
+}
 .titulo {
   text-align  : center;
   font-family : condensed light;
   font-size   : 3em;
 }
-
+.menu{
+  padding: 0 2.5em ;
+}
 .linea {
   height : 5px;
 }
