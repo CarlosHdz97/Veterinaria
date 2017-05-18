@@ -3,7 +3,9 @@
 
 {% block content %}
   <div class="row">
-    <p class="titulo">Clientes</p>
+    <div class="col s12">
+      <p class="titulo" style="margin-top: 0em; margin-bottom: 0em;">Clientes</p>
+    </div>
     {% if object_list %}
   {% for cliente in object_list %}
   <div class="col s12 m6 l4">

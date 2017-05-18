@@ -25,3 +25,26 @@ class MedicoForm(forms.ModelForm):
         'telefono': forms.TextInput(),
         'email': forms.EmailInput(),
         }
+
+class MedicoUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Medico
+
+        fields =[
+        'nombre',
+        'domicilio',
+        'telefono',
+        'email',
+        ]
+        labels = {
+        'nombre' : 'Nombre',
+        'domicilio':'Domicilio',
+        'telefono':'Telefono',
+        'email':'Email',
+        }
+        widgets = {
+        'nombre': forms.TextInput(),
+        'domicilio': forms.TextInput(),
+        'telefono': forms.TextInput(),
+        'email': forms.EmailInput(),
+        }

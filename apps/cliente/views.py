@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from apps.cliente.models import Cliente
-from apps.cliente.forms import ClienteForm
+from apps.cliente.forms import ClienteForm, ClienteUpdateForm
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 # Create your views here.
@@ -18,8 +18,8 @@ class ClienteList(ListView):
 
 class ClienteUpdate(UpdateView):
     model = Cliente
-    form_class = ClienteForm
-    template_name = 'cliente/altaCliente.html'
+    form_class = ClienteUpdateForm
+    template_name = 'cliente/actualizacionCliente.html'
     success_url = reverse_lazy('customer:principal')
 
 class ClienteDelete(DeleteView):
