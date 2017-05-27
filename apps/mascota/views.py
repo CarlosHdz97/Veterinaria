@@ -16,6 +16,13 @@ class MascotaList(ListView):
     model = Mascota
     template_name = 'mascota/reporteMascota.html'
 
+def mascota_list(request,rfc_cliente):
+    print(rfc_cliente)
+    mascota = Mascota.objects.filter(cliente = rfc_cliente)
+    contexto = {'mascotas':mascota}
+    print(contexto)
+    return render(request, 'mascota/reportesMascota.html', contexto)
+
 class MascotaUpdate(UpdateView):
     model = Mascota
     form_class = MascotaForm

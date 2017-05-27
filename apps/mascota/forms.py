@@ -31,6 +31,6 @@ class MascotaForm(forms.ModelForm):
         'color':forms.TextInput(),
         'tamano':forms.TextInput(),
         'senaParticular':forms.TextInput(),
-        'fechaNacimiento':forms.TextInput(),
+        'fechaNacimiento':forms.DateInput(),
         'cliente':forms.TextInput(),
         }

@@ -6,8 +6,8 @@ from apps.servicio.models import Servicio
 class Consulta(models.Model) :
     fecha = models.DateField()
     hora = models.CharField(max_length=20)
-    mascota = models.ForeignKey(Mascota, null = True, blank = True, on_delete = models.CASCADE,)
-    medico = models.ForeignKey(Medico, null = True, blank = True, on_delete = models.CASCADE,)
+    mascota = models.ForeignKey(Mascota, null = True, blank = True,)
+    medico = models.ForeignKey(Medico, null = True, blank = True,)
     servicio = models.ManyToManyField(Servicio)
     def __str__(self):
         return '{}'.format(self.mascota)
@@ -15,13 +15,13 @@ class Consulta(models.Model) :
 class Factura(models.Model):
     fecha = models.DateField()
     hora = models.CharField(max_length=20)
-    consulta = models.OneToOneField(Consulta, null = True, blank = True, on_delete = models.CASCADE,)
+    consulta = models.OneToOneField(Consulta, null = True, blank = True,)
     def __str__(self):
         return '{}'.format(self.id)
 class Historial(models.Model):
-    consulta = models.ForeignKey(Consulta, null = True, blank = True, on_delete = models.CASCADE,)
+    consulta = models.ForeignKey(Consulta, null = True, blank = True,)
     fechaSeguimiento = models.DateField(null = True)
     hora = models.CharField(max_length=20)
-    mascota = models.ForeignKey(Mascota, null = True, blank = True, on_delete = models.CASCADE,)
+    mascota = models.ForeignKey(Mascota, null = True, blank = True,)
     def __str__(self):
         return '{}'.format(self.mascota)

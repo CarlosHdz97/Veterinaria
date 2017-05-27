@@ -16,6 +16,7 @@
         <p>Domicilio: {{ cliente.domicilio }}</p>
         <p>Telefono: {{ cliente.telefono }}</p>
         <p>Email: {{ cliente.email }}</p>
+        <a class="waves-effect waves-light btn" href="{% url 'pet:reporte_mascota' cliente.rfc %}">Mascotas</a>
       </div>
       <div class="row teal lighten-5">
         <div class="card-action col s10 m8 l6 offset-s2 offset-m3 offset-l4">

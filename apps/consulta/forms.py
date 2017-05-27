@@ -1,5 +1,5 @@
 from django import forms
-from apps.consulta.models import Consulta
+from apps.consulta.models import Consulta, Factura
 class ConsultaForm(forms.ModelForm):
     class Meta:
         model = Consulta
@@ -9,21 +9,18 @@ class ConsultaForm(forms.ModelForm):
         'hora',
         'mascota',
         'medico',
-        'servicio',
         ]
         labels = {
         'fecha':'Fecha',
         'hora':'Hora',
         'mascota':'Mascota',
         'medico':'Medico',
-        'servicio':'Servicio',
         }
         widgets = {
         'Fecha':forms.TextInput(),
         'Hora':forms.TextInput(),
         'Mascota':forms.TextInput(),
-        'Medico':forms.TextInput(),
-        'Servicio':forms.TextInput(),
+        'Medico':forms.Select(),
         }
 class FacturaForm(forms.ModelForm):
     class Meta:

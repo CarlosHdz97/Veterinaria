@@ -3,9 +3,9 @@
 
 {% block content %}
   <div class="row">
-    <p class="titulo">Mascotas</p>
-    {% if object_list %}
-      {% for mascota in object_list %}
+    {% if mascotas %}
+      <p class="titulo">Mascotas de {{ mascota.cliente.nombre }}</p>
+      {% for mascota in mascotas %}
       <div class="col s12 m6 l4">
         <div class="card teal lighten-5">
           <div class="card-content black-text">
@@ -25,7 +25,7 @@
           </div>
         </div>
       </div>
-      {% endfor %}
+        {% endfor %}
     {% else %}
   <h1>No hay registros</h1>
     {% endif %}
