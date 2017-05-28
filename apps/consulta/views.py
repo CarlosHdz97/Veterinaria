@@ -15,3 +15,14 @@ class ConsultaCreate(CreateView):
     form_class = ConsultaForm
     template_name = 'consulta/altaConsulta.html'
     success_url = reverse_lazy('appointment:principal')
+
+class ConsultaUpdate(UpdateView):
+    model = Consulta
+    form_class = ConsultaForm
+    template_name = 'consulta/altaConsulta.html'
+    success_url = reverse_lazy('appointment:principal')
+
+class ConsultaDelete(DeleteView):
+    model = Consulta
+    template_name = 'consulta/bajaConsulta.html'
+    success_url = reverse_lazy('appointment:principal')

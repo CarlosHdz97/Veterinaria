@@ -25,8 +25,8 @@
       </div>
       <div class="row teal lighten-5">
         <div class="card-action col s10 m8 l6 offset-s2 offset-m3 offset-l4">
-          <a class="btn-floating btn-large waves-effect waves-light red" href="{% url 'appointment:principal' %}"> <i class="material-icons">edit</i></a>
-          <a class="btn-floating btn-large waves-effect waves-light darken-2" href="{% url 'appointment:principal' %}"> <i class="material-icons">delete</i></a>
+          <a class="btn-floating btn-large waves-effect waves-light red" href="{% url 'appointment:update_appointment' consulta.id %}"> <i class="material-icons">edit</i></a>
+          <a class="btn-floating btn-large waves-effect waves-light darken-2" href="{% url 'appointment:delete_appointment' consulta.id %}"> <i class="material-icons">delete</i></a>
         </div>
       </div>
     </div>
