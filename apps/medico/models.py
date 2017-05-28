@@ -8,4 +8,4 @@ class Medico(models.Model):
     telefono = models.CharField(max_length=12)
     email = models.EmailField()
     def __str__(self):
-        return '{}'.format(self.rfc)
+        return '{}'.format(self.nombre)

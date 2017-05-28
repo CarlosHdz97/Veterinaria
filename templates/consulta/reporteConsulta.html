@@ -12,8 +12,16 @@
         <span class="card-title">{{ consulta.mascota.nombre }}</span>
         <p>Fecha: {{ consulta.fecha }}</p>
         <p>Hora: {{ consulta.hora }}</p>
-        <p>Color: {{ consulta.medico }}</p>
-        <p>Seña Particular: {{ consulta.servicio }}</p>
+        <p>Medico: {{ consulta.medico }}</p>
+        <p>Mascota: {{ consulta.mascota }}</p>
+        <p>Servicios:</p>
+        <ul>
+          {% for servicio in consulta.servicio.all %}
+    				<li>
+    					{{servicio.descripcion}}
+    				</li>
+  				{% endfor %}
+			</ul>
       </div>
       <div class="row teal lighten-5">
         <div class="card-action col s10 m8 l6 offset-s2 offset-m3 offset-l4">

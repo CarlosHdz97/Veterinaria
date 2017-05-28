@@ -9,18 +9,21 @@ class ConsultaForm(forms.ModelForm):
         'hora',
         'mascota',
         'medico',
+        'servicio',
         ]
         labels = {
         'fecha':'Fecha',
         'hora':'Hora',
         'mascota':'Mascota',
         'medico':'Medico',
+        'servicio':'Servicios',
         }
         widgets = {
-        'Fecha':forms.TextInput(),
-        'Hora':forms.TextInput(),
-        'Mascota':forms.TextInput(),
-        'Medico':forms.Select(),
+        'fecha':forms.TextInput(),
+        'hora':forms.TextInput(),
+        'mascota':forms.Select(),
+        'medico':forms.Select(),
+        'servicio':forms.SelectMultiple(),
         }
 class FacturaForm(forms.ModelForm):
     class Meta:

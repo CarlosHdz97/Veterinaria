@@ -2,11 +2,50 @@
 {% block content %}
 <div class="col s12 m6 l4 offset-l4">
   <p class="titulo">Alta consulta</p>
-<form method="post">
-  {% csrf_token %}
-  <div class="row col s12 m10 l8 offset-m1 offset-l2">
-      {{ form.as_p }}
+  <form method="post">
+    {% csrf_token %}
+    <div class="row col s12 m10 l8 offset-m1 offset-l2">
+      <div class="input-field col s12">
+        {{form.fecha}}
+        <label for="{{form.fecha.name}}">{{form.fecha.label}}</label>
+        <p>{{ form.fecha.errors }}</p>
+      </div>
+      <div class="input-field col s12">
+        {{form.hora}}
+        <label for="{{form.hora.name}}">{{form.hora.label}}</label>
+        <p>{{ form.hora.errors }}</p>
+      </div>
+      <div class="input-field col s12">
+        {{form.mascota}}
+        <label>{{form.mascota.label}}</label>
+        <p>{{ form.mascota.errors }}</p>
+      </div>
+      <div class="input-field col s12">
+        {{form.medico}}
+        <label>{{form.medico.label}}</label>
+        <p>{{ form.medico.errors }}</p>
+      </div>
+      <p>
+      <input type="checkbox" id="test5" />
+      <label for="test5">Red</label>
+      </p>
+      <div class="input-field col s12">
+        {{form.servicio}}
+        <label>{{form.servicio.label}}</label>
+        <p>{{ form.servicio.errors }}</p>
+      </div>
+    </div>
+    <button  class="btn waves-effect waves-light" type="submit">Guardar</button>
+    <a class="btn btn-danger" href="{% url 'appointment:principal' %}"> Cancelar</a>
+  </form>
   </div>
-</form>
-</div>
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+
+<script>
+$(document).ready(function() {
+$('select').material_select();
+});
+</script>
 {% endblock %}
