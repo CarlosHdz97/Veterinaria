@@ -1,0 +1,37 @@
+{% extends 'base/base1.html' %}
+{% block title %} Mascota {% endblock %}
+
+{% block content %}
+  <div class="row">
+    <p class="titulo">Consultas   {{ consulta.mascota.cliente }}</p>
+    {% if consultas %}
+      {% for consulta in consultas %}
+      <div class="col s12 m6 l4">
+        <div class="card teal lighten-5">
+          <div class="card-content black-text">
+            <span class="card-title">{{ consulta.mascota }}</span>
+            <p>Fecha: {{ consulta.fecha }}</p>
+            <p>Hora: {{ consulta.hora }}</p>
+            <p>Medico: {{ consulta.medico }}</p>
+            <p>Servicios: <ul>
+              {% for servicio in consulta.servicio.all %}
+        				<li>
+        					{{servicio.descripcion}}
+        				</li>
+      				{% endfor %}
+    			</ul></p>
+          </div>
+          <div class="row teal lighten-5">
+            <div class="card-action col s10 m8 l6 offset-s2 offset-m3 offset-l4">
+              <a class="btn-floating btn-large waves-effect waves-light red" href="{% url 'appointment:update_appointment' consulta.id %}"> <i class="material-icons">edit</i></a>
+              <a class="btn-floating btn-large waves-effect waves-light darken-2" href="{% url 'appointment:delete_appointment' consulta.id %}"> <i class="material-icons">delete</i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+        {% endfor %}
+    {% else %}
+  <h1>No hay registros</h1>
+    {% endif %}
+  </div>
+{% endblock %}

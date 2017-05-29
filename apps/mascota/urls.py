@@ -7,6 +7,6 @@ urlpatterns = [
     url(r'^read/$',login_required(MascotaList.as_view()), name='principal'),
     url(r'^update/(?P<pk>\d+)/$',login_required(MascotaUpdate.as_view()), name='update_pet'),
     url(r'^delete/(?P<pk>\d+)/$', login_required(MascotaDelete.as_view()), name='delete_pet'),
-    url(r'^reporte/(\w+)/$', mascota_list, name='reporte_mascota'),
+    url(r'^read/(\w+)/$', mascota_list, name='reporte_mascota'),
 
 ]

@@ -4,11 +4,27 @@ from apps.consulta.forms import ConsultaForm
 from apps.consulta.models import Consulta
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
-# Create your views here.
+import time
+import datetime
 
 class ConsultaList(ListView):
     model = Consulta
     template_name = 'consulta/reporteConsulta.html'
+
+def Consulta_list(request,id_mascota):
+    hoy = time.strftime("%Y-%m-%d")
+    print (hoy)
+    print (hoy)
+    consulta = Consulta.objects.filter(mascota = id_mascota)
+    contexto = {'consultas':consulta}
+    print(contexto)
+    return render(request, 'consulta/reportesConsultas.html', contexto)
+
+def Historial(request,id_mascota):
+
+    consulta = Consulta.objects.filter(mascota = id_mascota)
+    contexto = {'consultas':consulta}
+    return render(request, 'consulta/reportesConsultas.html', contexto)
 
 class ConsultaCreate(CreateView):
     model = Consulta
